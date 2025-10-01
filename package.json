@@ -12,6 +12,8 @@
   "devDependencies": {
     "@cucumber/cucumber": "^12.2.0",
     "@playwright/test": "^1.55.1",
+    "@types/chai": "^5.2.2",
+    "chai": "^6.2.0",
     "ts-node": "^10.9.2"
   }
 }
