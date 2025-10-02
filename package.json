@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require steps/**/*.ts --require support/**/*.ts features/**/*.feature"
+    "test": "cucumber-js --require-module ts-node/register --require steps/**/*.ts --require support/**/*.ts features/**/*.feature",
+    "report":"cucumber-js --format html:cucumber-report.html"
   },
   "keywords": [],
   "author": "",
