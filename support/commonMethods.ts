@@ -1,6 +1,6 @@
 import { Page, ElementHandle, Locator } from '@playwright/test';
 
-export class CommonMethods {
+export class commonMethods {
     constructor(private page: Page) {
         this.page = page;
     }
@@ -38,5 +38,8 @@ export class CommonMethods {
             console.error('Error interacting with the page', error)
         }
     }
-    async
+    async getText(selector: any) {
+        await this.waitForElement(selector);
+        return await this.page.locator(selector).innerText();
+    }  
 }
