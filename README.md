@@ -1,10 +1,14 @@
-## Playwright Automation - SauceDemo
+## Playwright Automation Framework - SauceDemo
 
-Automated end-to-end tests for [SauceDemo](https://www.saucedemo.com/) using Playwright and Cucumber (BDD).
+This repository contains an end-to-end test automation framework built using Playwright, Cucumber (BDD), and TypeScript, implemented against the SauceDemo
+ application.
+
+The framework follows BDD principles, Page Object Model (POM) design, and supports clean separation of concerns for maintainable and scalable test automation.
 
 
 ## Table of Contents
 
+- [Tech Stack](tech-stack)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Configuration](#configuration)
@@ -13,12 +17,23 @@ Automated end-to-end tests for [SauceDemo](https://www.saucedemo.com/) using Pla
 - [Writing Tests](#writing-tests)
 - [Reporting](#reporting)
 
+## Tech Stack
+1. Playwright – Browser automation
+2. Cucumber – BDD framework
+3. TypeScript – Type safety and scalability
+4. Chai – Assertions
+5. Node.js / npm – Dependency management
+
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v16 or higher)
 - [npm](https://www.npmjs.com/)
+- Git
 
 ## Installation
+
+Clone the repository and install dependencies:
 
 ```sh
 git clone https://github.com/puneetsharma9607/Playwright-automation-repo.git
@@ -28,12 +43,18 @@ npm install
 
 ## Configuration
 
-- Copy `.env.example` to `.env` and update as needed.
-- Add your credentials to `data/credentials.json` (this file is gitignored):
+1. Copy the example environment file:
+
+```sh
+cp .env.example .env
+```
+
+2. Update .env with valid credentials:
+(.env is gitignored and should never be committed)
 
 ```json
 {
-  "username": "your_username",
+  "STANDARD_USER": "STANDARD_USER=standard_user",
   "password": "your_password"
 }
 ```
@@ -47,6 +68,7 @@ pages/            # Page Object Model files
 support/          # Hooks and custom world
 data/             # Test data (credentials, etc.)
 playwright.config.ts  # Playwright configuration
+cucumber.js       # Cucumber configuratioj
 ```
 
 ---
@@ -93,3 +115,18 @@ npm run report
 ```
 
 ---
+
+Highlights
+
+- BDD with Cucumber & Gherkin
+- Page Object Model implementation
+- Playwright browser lifecycle managed via hooks
+- Clean and scalable project structure
+- Ready for CI/CD integration
+
+
+Author
+
+Puneet Sharma
+QA Engineer | Manual + Automation Testing
+[LinkedIn](https://www.linkedin.com/in/puneetsharmaa/)
