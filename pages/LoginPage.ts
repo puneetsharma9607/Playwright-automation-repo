@@ -1,32 +1,44 @@
-import { Locator, Page } from '@playwright/test';
-import { assert, expect, util } from 'chai';
+import { Page } from '@playwright/test';
+
 
 export class LoginPage {
-    private data: any;
-    private testdata: any;
-    private element!: Locator;
+  constructor(private page: Page) {}
 
-    public readonly locators = {
+  private locators = {
+    loginLogo: '.login_logo',
+    usernameInput: '#user-name',
+    passwordInput: '#password',
+    loginButton: '#login-button',
+    errorMessage: '[data-test="error"]',
+  };
 
-        //Login page locators
-        title_loginPage: "//div[@class='login_logo']",
-        input_userName: "[id='user-name']",
-        input_password: "[id='password']",
-        btn_login: "[id='login-button']",
+  async navigate() {
+    await this.page.goto('/');
+  }
 
+  async login(username: string, password: string) {
+    await this.page.fill(this.locators.usernameInput, username);
+    await this.page.fill(this.locators.passwordInput, password);
+    await this.page.click(this.locators.loginButton);
+  }
 
-    }
+  async getPageUrl() {
+    return this.page.url();
+  }
 
-    constructor(private page: Page) {
+  async getPageTitle() {
+    return this.page.title();
+  }
 
-    }
+  async getUsernamePlaceholder() {
+    return this.page.getAttribute(this.locators.usernameInput, 'placeholder');
+  }
 
-    async goTo() {
-        await this.page.goto('https://www.saucedemo.com/');
-    }
-    async login(username: string, password: string) {
-        await this.page.fill(this.locators.input_userName, username);
-        await this.page.fill(this.locators.input_password, password);
-        await this.page.click(this.locators.btn_login);
-    }
+  async getPasswordPlaceholder() {
+    return this.page.getAttribute(this.locators.passwordInput, 'placeholder');
+  }
+
+  async isErrorVisible() {
+    return this.page.isVisible(this.locators.errorMessage);
+  }
 }

@@ -1,71 +1,56 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import { LoginPage } from '../pages/LoginPage';
 import { expect } from 'chai';
-import credentials from '../data/credentials.json';
-
-let loginPage: LoginPage;
+import { LoginPage } from '../pages/LoginPage';
+import { ProductsPage } from '../pages/ProductsPage';
 
 Given('I am on the login page', async function () {
-    loginPage = new LoginPage(this.page);
-    await loginPage.goTo();
-    console.log('Navigated to login page');
+  this.loginPage = new LoginPage(this.page);
+  await this.loginPage.navigate();
 });
 
 Then('the page URL should be {string}', async function (expectedUrl: string) {
-    expect(this.page.url()).to.equal(expectedUrl);
-    console.log('Page URL validated');
+  expect(await this.loginPage.getPageUrl()).to.equal(expectedUrl);
 });
 
 Then('the page title should be {string}', async function (expectedTitle: string) {
-    expect(await this.page.title()).to.equal(expectedTitle);
-    console.log('Page title validated');
+  expect(await this.loginPage.getPageTitle()).to.equal(expectedTitle);
 });
 
-Then('the username input should have placeholder {string}', async function (expectedPlaceholder: string) {
-    const actual = await this.page.getAttribute(loginPage.locators.input_userName, 'placeholder');
-    expect(actual).to.equal(expectedPlaceholder);
-    console.log('Username input placeholder validated');
-});
+Then(
+  'the username input should have placeholder {string}',
+  async function (expected: string) {
+    expect(await this.loginPage.getUsernamePlaceholder()).to.equal(expected);
+  }
+);
 
-Then('the password input should have placeholder {string}', async function (expectedPlaceholder: string) {
-    const actual = await this.page.getAttribute(loginPage.locators.input_password, 'placeholder');
-    expect(actual).to.equal(expectedPlaceholder);
-    console.log('Password input placeholder validated');
-});
-
-Then('the login button should have text {string}', async function (expectedText: string) {
-    const actual = await this.page.textContent(loginPage.locators.btn_login);
-    expect(actual?.trim()).to.equal(expectedText);
-    console.log('Login button text validated');
-});
-
-When('I login with username {string} and password {string}', async function (username: string, password: string) {
-    await loginPage.login(credentials.username, credentials.password);
-    console.log(`Attempted login with username: ${username}`);
-});
-
+Then(
+  'the password input should have placeholder {string}',
+  async function (expected: string) {
+    expect(await this.loginPage.getPasswordPlaceholder()).to.equal(expected);
+  }
+);
 
 When('I login with valid credentials', async function () {
-  await loginPage.login(credentials.username, credentials.password);
-  console.log('Attempted login with valid credentials');
-});
-
-When('I login with invalid credentials', async function () {
-  // Use obviously invalid credentials
-  await loginPage.login('invalid_user', 'invalid_pass');
-  console.log('Attempted login with invalid credentials');
+  await this.loginPage.login(
+    process.env.STANDARD_USER!,
+    process.env.PASSWORD!
+  );
 });
 
 Then('I should see the products page', async function () {
-  await this.page.waitForSelector('.inventory_list');
-  const url = this.page.url();
-  expect(url).to.include('/inventory.html');
-  console.log('Login successful: Products page is visible');
+  this.productsPage = new ProductsPage(this.page);
+
+  expect(await this.productsPage.isProductsPageVisible()).to.be.true;
+  expect(await this.productsPage.isAnyProductVisible()).to.be.true;
+});
+
+When('I login with invalid credentials', async function () {
+  await this.loginPage.login(
+    process.env.INVALID_USER!,
+    process.env.INVALID_PASSWORD!
+  );
 });
 
 Then('login should not be successful', async function () {
-  await this.page.waitForTimeout(1000);
-  const url = this.page.url();
-  expect(url).to.equal('https://www.saucedemo.com/');
-  console.log('Login unsuccessful: Still on login page');
+  expect(await this.loginPage.isErrorVisible()).to.be.true;
 });

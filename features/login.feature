@@ -8,12 +8,12 @@ Feature: Login page validation
     And the username input should have placeholder "Username"
     And the password input should have placeholder "Password"
 
-  Scenario: User can login with valid credentials
+  Scenario: Login with valid credentials
     Given I am on the login page
     When I login with valid credentials
     Then I should see the products page
 
-  Scenario: User cannot login with invalid credentials
+  Scenario: Login with invalid credentials
     Given I am on the login page
     When I login with invalid credentials
     Then login should not be successful

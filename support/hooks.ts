@@ -1,9 +1,9 @@
 import { Before, After } from '@cucumber/cucumber';
 
 Before(async function () {
-  await this.openBrowser();
+  await this.init();
 });
 
 After(async function () {
-  await this.closeBrowser();
+  await this.cleanup();
 });
