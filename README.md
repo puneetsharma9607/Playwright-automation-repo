@@ -1,7 +1,7 @@
 ## Playwright Automation Framework - SauceDemo
 
-This repository contains an end-to-end test automation framework built using Playwright, Cucumber (BDD), and TypeScript, implemented against the SauceDemo
- application.
+This repository contains an end-to-end test automation framework built using Playwright, Cucumber (BDD), and TypeScript, implemented against the [SauceDemo
+ application](https://www.saucedemo.com/)
 
 The framework follows BDD principles, Page Object Model (POM) design, and supports clean separation of concerns for maintainable and scalable test automation.
 
@@ -45,19 +45,24 @@ npm install
 
 1. Copy the example environment file:
 
-```sh
-cp .env.example .env
-```
+This project uses environment variables to manage sensitive data such as credentials.
 
-2. Update .env with valid credentials:
-(.env is gitignored and should never be committed)
+###Step 1: Create a `.env` file
 
-```json
-{
-  "STANDARD_USER": "STANDARD_USER=standard_user",
-  "password": "your_password"
-}
-```
+Create a `.env` file in the root directory of the project.
+
+The `.env` file is gitignored and must never be committed to version control.
+
+### Step 2: Add the following variables to `.env`
+
+```env
+BASE_URL=https://www.saucedemo.com
+
+STANDARD_USER=standard_user
+PASSWORD=secret_sauce
+
+INVALID_USER=invalid_user
+INVALID_PASSWORD=wrong_password
 
 ## Project Structure
 
