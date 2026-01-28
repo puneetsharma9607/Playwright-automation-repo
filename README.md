@@ -1,9 +1,13 @@
 ## Playwright Automation Framework - SauceDemo
 
-This repository contains an end-to-end test automation framework built using Playwright, Cucumber (BDD), and TypeScript, implemented against the [SauceDemo
+This project contains an end-to-end test automation framework built using Playwright, Cucumber (BDD), and TypeScript, implemented against the [SauceDemo
  application](https://www.saucedemo.com/)
 
-The framework follows BDD principles, Page Object Model (POM) design, and supports clean separation of concerns for maintainable and scalable test automation.
+The goal of this project is to demonstrate:
+
+1. Different user login scenarios and validations
+2. Add to cart and product list validations
+3. End to End order flow
 
 
 ## Table of Contents
@@ -43,26 +47,21 @@ npm install
 
 ## Configuration
 
-1. Copy the example environment file:
+This project uses a .env file to store environment values like username and password.
 
-This project uses environment variables to manage sensitive data such as credentials.
+Step 1: Create .env file
+```sh
+cp .env.example .env
+```
+Step 2: Add credentials in .env
+USERNAME=your_username
+PASSWORD=your_password
 
-###Step 1: Create a `.env` file
+Note:
 
-Create a `.env` file in the root directory of the project.
-
-The `.env` file is gitignored and must never be committed to version control.
-
-### Step 2: Add the following variables to `.env`
-
-```env
-BASE_URL=https://www.saucedemo.com
-
-STANDARD_USER=standard_user
-PASSWORD=secret_sauce
-
-INVALID_USER=invalid_user
-INVALID_PASSWORD=wrong_password
+- .env file is gitignored and not committed to the repository.
+- For SauceDemo, the valid usernames and password are publicly available on the landing page of saucedemo.com.
+- You can directly copy the credentials displayed there and use them in your .env file.
 
 ## Project Structure
 
