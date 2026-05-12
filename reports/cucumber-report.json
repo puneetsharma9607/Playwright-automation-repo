@@ -1,0 +1,455 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-page-validation;verify-all-static-elements-on-the-login-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Verify all static elements on the login page",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1201399499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I am on the login page",
+            "match": {
+              "location": "steps/login/login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 379762708
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "the page URL should be \"https://www.saucedemo.com/\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2890542
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the page title should be \"Swag Labs\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11284124
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "the username input should have placeholder \"Username\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15835625
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "the password input should have placeholder \"Password\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:26"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1750416
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 169525459
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-validation;login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "Login with valid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 530891165
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 13,
+            "name": "I am on the login page",
+            "match": {
+              "location": "steps/login/login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 325233124
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 14,
+            "name": "I login with valid credentials",
+            "match": {
+              "location": "steps/login/login.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 135333624
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "I should see the products page",
+            "match": {
+              "location": "steps/login/login.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3154291
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 115265707
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 11
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-validation;login-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "Login with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 564621292
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I am on the login page",
+            "match": {
+              "location": "steps/login/login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 295542999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I login with invalid credentials",
+            "match": {
+              "location": "steps/login/login.steps.ts:47"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 84575334
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "login should not be successful",
+            "match": {
+              "location": "steps/login/login.steps.ts:54"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1693749
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 123494166
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 17
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-validation;login-with-empty-username",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Login with empty username",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 574162250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 24,
+            "name": "I am on the login page",
+            "match": {
+              "location": "steps/login/login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 308837249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 25,
+            "name": "I login with empty username",
+            "match": {
+              "location": "steps/login/login.steps.ts:58"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 52926999
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 26,
+            "name": "I should see an error message for empty username",
+            "match": {
+              "location": "steps/login/login.steps.ts:65"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1099541
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 108567750
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-validation;login-with-empty-password",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "Login with empty password",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 543156665
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "I am on the login page",
+            "match": {
+              "location": "steps/login/login.steps.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 327765457
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I login with empty password",
+            "match": {
+              "location": "steps/login/login.steps.ts:69"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 51407499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "I should see an error message for empty password",
+            "match": {
+              "location": "steps/login/login.steps.ts:76"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1036290
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 114124584
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-page-validation;logout-successfully",
+        "keyword": "Scenario",
+        "line": 34,
+        "name": "Logout successfully",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 683134584
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 35,
+            "name": "I am a logged in user",
+            "match": {
+              "location": "steps/login/login.steps.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 423541459
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 36,
+            "name": "I logout from the application",
+            "match": {
+              "location": "steps/login/login.steps.ts:91"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 983324582
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 37,
+            "name": "I should be redirected to login page",
+            "match": {
+              "location": "steps/login/login.steps.ts:95"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 319375
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 131639166
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 33
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-page-validation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login page validation",
+    "tags": [],
+    "uri": "features/login/login.feature"
+  }
+]

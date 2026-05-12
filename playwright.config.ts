@@ -7,7 +7,7 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30000,
   retries: 1,
-  reporter: [['list'], ['html', { open: 'never' }]],
+  reporter: [['list'], ['html', { open: 'always' }]],
   use: {
     headless: false,
     viewport: { width: 1280, height: 720 },
