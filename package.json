@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require steps/**/*.ts --require support/**/*.ts features/**/*.feature",
-    "report": "cucumber-js --format html:cucumber-report.html"
+    "test": "cucumber-js",
+    "test:html": "node reports/report.js",
+    "open:report": "open reports/html-report/index.html",
+    "test:report": "npm run test && npm run test:html && npm run open:report"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,517 @@
 [
   {
+    "description": "  As a logged in user\n  I want to complete a checkout flow\n  So that I can finish an order successfully",
+    "elements": [
+      {
+        "description": "",
+        "id": "checkout-flow;complete-checkout-flow-after-adding-a-product-to-the-cart",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Complete checkout flow after adding a product to the cart",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1396951084
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am a logged in user",
+            "match": {
+              "location": "steps/login/login.steps.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 539612374
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I add \"Sauce Labs Backpack\" to the cart",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 21464582
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I navigate to the cart",
+            "match": {
+              "location": "steps/checkout/cartcheckout.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 94093041
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "the cart should display the selected item \"Sauce Labs Backpack\"",
+            "match": {
+              "location": "steps/checkout/cartcheckout.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7371333
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "the page URL should be \"https://www.saucedemo.com/cart.html\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 363208
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I click the checkout button",
+            "match": {
+              "location": "steps/checkout/cartcheckout.steps.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 85505959
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I enter checkout details with first name \"John\", last name \"Doe\" and ZIP \"12345\"",
+            "match": {
+              "location": "steps/checkout/cartcheckout.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13678917
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "the page URL should be \"https://www.saucedemo.com/checkout-step-one.html\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 234249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I click continue",
+            "match": {
+              "location": "steps/checkout/cartcheckout.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 99185791
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the page URL should be \"https://www.saucedemo.com/checkout-step-two.html\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 262333
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I click finish",
+            "match": {
+              "location": "steps/checkout/cartcheckout.steps.ts:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 81676042
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 18,
+            "name": "I should see the order confirmation message \"Thank you for your order!\"",
+            "match": {
+              "location": "steps/checkout/cartcheckout.steps.ts:40"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1745833
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 151461624
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "checkout-flow",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Checkout flow",
+    "tags": [],
+    "uri": "features/checkout/checkout.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "inventory-page-validation;verify-inventory-page-elements",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Verify inventory page elements",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 577771249
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am a logged in user",
+            "match": {
+              "location": "steps/login/login.steps.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 437609250
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the page URL should be \"https://www.saucedemo.com/inventory.html\"",
+            "match": {
+              "location": "steps/login/login.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 429375
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "shopping cart icon should be visible",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2107291
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "burger menu icon should be visible",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2425459
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Sauce Labs Backpack"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Sauce Labs Bike Light"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Sauce Labs Bolt T-Shirt"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Sauce Labs Fleece Jacket"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Sauce Labs Onesie"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Test.allTheThings() T-Shirt (Red)"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 11,
+            "name": "all inventory item names should match expected list:",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7227082
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 112846375
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "inventory-page-validation;verify-user-can-add-product-to-cart",
+        "keyword": "Scenario",
+        "line": 21,
+        "name": "Verify user can add product to cart",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 565857624
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am a logged in user",
+            "match": {
+              "location": "steps/login/login.steps.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 457183666
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 22,
+            "name": "I add a product to the cart",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:21"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 32528959
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 23,
+            "name": "cart badge count should be 1",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:29"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1387792
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 24,
+            "name": "added item should show in cart",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 859500
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 110209249
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 20
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "inventory-page-validation;verify-sidebar-menu-items",
+        "keyword": "Scenario",
+        "line": 27,
+        "name": "Verify sidebar menu items",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 560545124
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I am a logged in user",
+            "match": {
+              "location": "steps/login/login.steps.ts:80"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 406081584
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "I open the burger menu",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:39"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 36264124
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "All Items"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "About"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Logout"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Reset App State"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "the following sidebar items should be visible:",
+            "match": {
+              "location": "steps/inventory/productspage.steps.ts:42"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5844124
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 103414541
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 26
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "inventory-page-validation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Inventory page validation",
+    "tags": [],
+    "uri": "features/inventory/inventory.feature"
+  },
+  {
     "description": "",
     "elements": [
       {
@@ -14,7 +526,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1201399499
+              "duration": 530343958
             }
           },
           {
@@ -27,7 +539,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 379762708
+              "duration": 302116374
             }
           },
           {
@@ -40,7 +552,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2890542
+              "duration": 400625
             }
           },
           {
@@ -53,7 +565,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11284124
+              "duration": 2758625
             }
           },
           {
@@ -66,7 +578,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15835625
+              "duration": 12636124
             }
           },
           {
@@ -79,7 +591,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1750416
+              "duration": 2767874
             }
           },
           {
@@ -87,7 +599,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 169525459
+              "duration": 119819915
             }
           }
         ],
@@ -111,7 +623,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 530891165
+              "duration": 561281500
             }
           },
           {
@@ -124,7 +636,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 325233124
+              "duration": 294829667
             }
           },
           {
@@ -137,7 +649,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 135333624
+              "duration": 168790417
             }
           },
           {
@@ -150,7 +662,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 3154291
+              "duration": 3024875
             }
           },
           {
@@ -158,7 +670,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 115265707
+              "duration": 120853499
             }
           }
         ],
@@ -182,7 +694,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 564621292
+              "duration": 606647291
             }
           },
           {
@@ -195,7 +707,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 295542999
+              "duration": 304910833
             }
           },
           {
@@ -208,7 +720,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 84575334
+              "duration": 97450584
             }
           },
           {
@@ -221,7 +733,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1693749
+              "duration": 2163916
             }
           },
           {
@@ -229,7 +741,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 123494166
+              "duration": 118426750
             }
           }
         ],
@@ -253,7 +765,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 574162250
+              "duration": 570211541
             }
           },
           {
@@ -266,7 +778,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 308837249
+              "duration": 289398499
             }
           },
           {
@@ -279,7 +791,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 52926999
+              "duration": 81106499
             }
           },
           {
@@ -292,7 +804,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1099541
+              "duration": 1168625
             }
           },
           {
@@ -300,7 +812,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 108567750
+              "duration": 106529291
             }
           }
         ],
@@ -319,7 +831,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 543156665
+              "duration": 587453499
             }
           },
           {
@@ -332,7 +844,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 327765457
+              "duration": 308668958
             }
           },
           {
@@ -345,7 +857,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 51407499
+              "duration": 78671625
             }
           },
           {
@@ -358,7 +870,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1036290
+              "duration": 1162959
             }
           },
           {
@@ -366,7 +878,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 114124584
+              "duration": 105202500
             }
           }
         ],
@@ -385,7 +897,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 683134584
+              "duration": 561028625
             }
           },
           {
@@ -398,7 +910,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 423541459
+              "duration": 447300165
             }
           },
           {
@@ -407,11 +919,11 @@
             "line": 36,
             "name": "I logout from the application",
             "match": {
-              "location": "steps/login/login.steps.ts:91"
+              "location": "steps/login/login.steps.ts:93"
             },
             "result": {
               "status": "passed",
-              "duration": 983324582
+              "duration": 1050580500
             }
           },
           {
@@ -420,11 +932,11 @@
             "line": 37,
             "name": "I should be redirected to login page",
             "match": {
-              "location": "steps/login/login.steps.ts:95"
+              "location": "steps/login/login.steps.ts:97"
             },
             "result": {
               "status": "passed",
-              "duration": 319375
+              "duration": 262042
             }
           },
           {
@@ -432,7 +944,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 131639166
+              "duration": 111278500
             }
           }
         ],

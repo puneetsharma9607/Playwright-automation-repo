@@ -86,6 +86,8 @@ Given('I am a logged in user', async function () {
     process.env.STANDARD_USER!,
     process.env.PASSWORD!
   );
+
+  this.productsPage = new ProductsPage(this.page);
 });
 
 When('I logout from the application', async function () {
