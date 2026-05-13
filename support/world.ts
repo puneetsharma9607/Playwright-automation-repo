@@ -10,7 +10,7 @@ export class CustomWorld {
   page!: Page;
 
   async init() {
-    this.browser = await chromium.launch({ headless: false });
+    this.browser = await chromium.launch({ headless: true });
     this.context = await this.browser.newContext({
       baseURL: process.env.BASE_URL,
     });
