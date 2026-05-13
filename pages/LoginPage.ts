@@ -15,7 +15,7 @@ export class LoginPage {
 
   // Method to navigate to the login page
   async navigate() {
-    await this.page.goto(process.env.BASE_URL!);
+    await this.page.goto('https://www.saucedemo.com/');
   }
 
   // Method to perform login action
