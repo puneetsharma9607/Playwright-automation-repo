@@ -5,3 +5,5 @@ test-results/
 cucumber-report.html
 .DS_Store
 reports/
+index.html
+cucumber-report.json

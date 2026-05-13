@@ -1,136 +1,116 @@
-## Playwright Automation Framework - SauceDemo
+# Playwright Automation Framework - SauceDemo
 
-This project contains an end-to-end test automation framework built using Playwright, Cucumber (BDD), and TypeScript, implemented against the [SauceDemo
- application](https://www.saucedemo.com/)
+This repository contains an end-to-end automation framework for [SauceDemo](https://www.saucedemo.com/) using:
+- Playwright
+- Cucumber (BDD)
+- TypeScript
+- Page Object Model
 
-The goal of this project is to demonstrate:
-
-1. Different user login scenarios and validations
-2. Add to cart and product list validations
-3. End to End order flow
-
-
-## Table of Contents
-
-- [Tech Stack](tech-stack)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Project Structure](#project-structure)
-- [Usage](#usage)
-- [Writing Tests](#writing-tests)
-- [Reporting](#reporting)
-
-## Tech Stack
-1. Playwright – Browser automation
-2. Cucumber – BDD framework
-3. TypeScript – Type safety and scalability
-4. Chai – Assertions
-5. Node.js / npm – Dependency management
-
+The current test coverage includes:
+- Login validations
+- Product listing and cart validations
+- Full checkout flow from cart to order confirmation
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [npm](https://www.npmjs.com/)
+- Node.js v16+ installed
+- npm installed
 - Git
 
 ## Installation
 
-Clone the repository and install dependencies:
-
 ```sh
-git clone https://github.com/puneetsharma9607/Playwright-automation-repo.git
-cd Playwright-automation-repo
+git clone <repo-url>
+cd playwright-automation-demo
 npm install
 ```
 
 ## Configuration
 
-This project uses a .env file to store environment values like username and password.
+Create a `.env` file in the project root and set the required credentials:
 
-Step 1: Create .env file
 ```sh
 cp .env.example .env
 ```
-Step 2: Add credentials in .env
-USERNAME=your_username
-PASSWORD=your_password
 
-Note:
+Update `.env` with values such as:
 
-- .env file is gitignored and not committed to the repository.
-- For SauceDemo, the valid usernames and password are publicly available on the landing page of saucedemo.com.
-- You can directly copy the credentials displayed there and use them in your .env file.
+```env
+BASE_URL=https://www.saucedemo.com
+STANDARD_USER=standard_user
+PASSWORD=secret_sauce
+INVALID_USER=locked_out_user
+INVALID_PASSWORD=wrong_password
+```
+
+> The `.env` file is not committed.
 
 ## Project Structure
 
-```
-features/         # Gherkin feature files
-steps/            # Step definitions
-pages/            # Page Object Model files
-support/          # Hooks and custom world
-data/             # Test data (credentials, etc.)
-playwright.config.ts  # Playwright configuration
-cucumber.js       # Cucumber configuratioj
-```
-
----
+- `features/` — Gherkin `.feature` files
+- `steps/` — Cucumber step definitions
+- `pages/` — Page objects
+- `support/` — hooks and custom world setup
+- `reports/` — generated test reports
+- `cucumber.js` — Cucumber configuration
+- `playwright.config.ts` — Playwright configuration
 
 ## Usage
 
-To run all tests:
+Run all tests:
 
 ```sh
 npm run test
 ```
 
-To run a specific feature:
+Run a specific feature:
 
 ```sh
-npx cucumber-js features/login.feature
+npx cucumber-js features/checkout/checkout.feature
 ```
-
----
-
-## Writing Tests
-
-- Add new scenarios to `.feature` files in the `features/` folder.
-- Implement step definitions in `steps/`.
-- Use or extend page objects in `pages/`.
-
----
 
 ## Reporting
 
-- Test results are shown in the terminal.
-- To generate an HTML report, add a script in `package.json`:
-
-```json
-"scripts": {
-  "report": "cucumber-js --format html:cucumber-report.html"
-}
-```
-
-Then run:
+Generate the HTML report and open it automatically:
 
 ```sh
-npm run report
+npm run test:report
 ```
+
+This runs tests, generates an HTML report at `reports/html-report/index.html`, and opens it in the browser.
+
+Individual report commands:
+
+```sh
+npm run test:html
+npm run open:report
+```
+
+## Checkout Flow
+
+The checkout workflow is implemented in `features/checkout/checkout.feature` and covers:
+1. Add product to cart
+2. Navigate to cart
+3. Verify selected product in cart
+4. Proceed to checkout
+5. Enter customer details
+6. Continue to payment overview
+7. Finish order
+8. Verify success message
+
+## Writing Tests
+
+- Add scenarios in `features/`
+- Map steps in `steps/`
+- Use page objects in `pages/`
+- Keep step definitions reusable and page logic isolated
+
+## Notes
+
+- The project uses Cucumber configuration from `cucumber.js`
+- Playwright browser lifecycle is managed through `support/world.ts`
+- Checkout flow uses `CartPage`, `CheckoutPage1`, and `CheckoutPage2`
 
 ---
 
-Highlights
-
-- BDD with Cucumber & Gherkin
-- Page Object Model implementation
-- Playwright browser lifecycle managed via hooks
-- Clean and scalable project structure
-- Ready for CI/CD integration
-
-
-Author
-
-Puneet Sharma
-QA Engineer | Manual + Automation Testing
-[LinkedIn](https://www.linkedin.com/in/puneetsharmaa/)
+Author: Puneet Sharma
